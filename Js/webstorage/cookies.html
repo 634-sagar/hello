@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action ="">
+        <input type="text" placeholder="ok" id="name"> 
+        <input type="text" placeholder="pl" id="rollName">
+<button id ="btn">Add</button>
+    </form>
+    <script>
+        function setCookie(cname, cvalue, exdays){
+            const d = new Date ()
+            d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
+            let expires = "expires=" + d.toUTCString()
+            document.cookie = cname + "=" + cvalue + ";" + expires;
+        }
+        document.getElementById("btn").addEventListener("click", (e) => {
+            e.preventDefault()
+            const name = document.getElementById("name").value
+            const rollName = document.getElementById("rollName").value
+            setCookie("student", JSON.stringify({name, rollName}), 7)
+
+        })
+    </script>
+</body>
+</html>

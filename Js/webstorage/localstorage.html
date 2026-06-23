@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action ="">
+        <input type="text" placeholder="ok" id="name"> 
+        <input type="text" placeholder="pl" id="rollName">
+<button id ="btn">Add</button>
+    </form>
+    <script>
+        document.getElementById("btn").addEventListener("click", (e) => {
+            e.preventDefault()
+            const name = document.getElementById("name").value
+            const rollName = document.getElementById("rollName").value
+            localStorage.setItem("data", JSON.stringify({name, rollName}))
+        })
+    </script>
+</body>
+</html>
